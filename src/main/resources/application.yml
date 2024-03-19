@@ -1,0 +1,25 @@
+server:
+  port: 8083
+
+spring:
+  config:
+    import: optional:classpath:credentials.yml
+
+  application:
+    name: TELEGRAM-BOT
+  datasource:
+    username: 'postgres'
+    url: jdbc:postgresql://localhost:5432/otv
+    password: 'postgres'
+  jpa:
+    properties:
+      hibernate:
+        format_sql: 'true'
+        enable_lazy_load_no_trans: 'true'
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    root: debug
